@@ -3,6 +3,7 @@
     <h1 class="title">Создать новый пост</h1>
     <span v-show="emptyInput" class="error">Пост не может быть пустым</span>
     <my-input
+        v-focus
         v-model="post.title"
         class="post__add-input"
         placeholder="Название"

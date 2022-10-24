@@ -1,12 +1,13 @@
 <template>
     <li class="post">
       <div>
-        <strong>Название:</strong> {{ post.title }} <br>
-        <strong>Описание:</strong> {{ post.body }}
+        <p class="post__info"><strong>Название:</strong> {{ post.title }}</p>
+        <p class="post__info"><strong>Описание:</strong> {{ post.body }}</p>
       </div>
-      <div>
+      <div class="btns">
         <!-- с помощью $emit генерируем события, которые передадим по цепочке вверх (родителю)-->
-        <my-button @click="$emit('remove', post)">X</my-button>
+        <my-button class="btn" @click="$router.push(`/posts/${post.id}`)">Открыть</my-button>
+        <my-button class="btn" @click="$emit('remove', post)">X</my-button>
       </div>
     </li>
 </template>
@@ -32,5 +33,14 @@ export default {
     border: 2px solid teal;
     border-radius: 6px;
     margin-top: 10px;
+  }
+  .post__info {
+    margin-bottom: 5px;
+  }
+  .btns {
+    display: flex;
+  }
+  .btn {
+    margin: 0px 5px 0px 5px;
   }
 </style>
