@@ -1,4 +1,4 @@
-# ulbi-tv
+# Vue 3 app
 
 ## Project setup
 ```
